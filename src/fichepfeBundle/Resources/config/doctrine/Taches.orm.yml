@@ -1,0 +1,35 @@
+fichepfeBundle\Entity\Taches:
+    type: entity
+    table: taches
+    indexes:
+        idprojet:
+            columns:
+                - idprojet
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        description:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    manyToOne:
+        idprojet:
+            targetEntity: Projetpfe
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idprojet:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,36 @@
+fichepfe_homepage:
+    path:     /
+    defaults: { _controller: fichepfeBundle:Default:index }
+
+aff:
+    path:     /aff
+    defaults: { _controller: fichepfeBundle:fichepfe:Affiche }
+
+
+ajoutpfe:
+    path:     /ajoutpfe
+    defaults: { _controller: fichepfeBundle:fichepfe:ajoutpfe }
+
+afficheinfo:
+    path:     /afficheinfo/?{id}&{nom}&{prenom}
+    defaults: { _controller: fichepfeBundle:fichepfe:Afficheinfo }
+
+Archiver:
+    path: /Archiver{id}
+    defaults: { _controller: fichepfeBundle:fichepfe:Archiver }
+update:
+    path: /update{id}
+    defaults: { _controller: fichepfeBundle:fichepfe:update }
+
+Archives:
+    path:     /Archives
+    defaults: { _controller: fichepfeBundle:fichepfe:Archives }
+Desarchiver:
+    path: /Desarchiver{id}
+    defaults: { _controller: fichepfeBundle:fichepfe:Desarchiver }
+
+
+recherche:
+    path: /recherche/
+    defaults: { _controller: fichepfeBundle:fichepfe:Recherche }
+

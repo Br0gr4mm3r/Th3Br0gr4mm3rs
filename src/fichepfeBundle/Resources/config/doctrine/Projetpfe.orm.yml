@@ -1,0 +1,67 @@
+fichepfeBundle\Entity\Projetpfe:
+    type: entity
+    table: projetpfe
+    indexes:
+        iduser:
+            columns:
+                - iduser
+        idsuivi:
+            columns:
+                - idsuivi
+        idsuivi_2:
+            columns:
+                - idsuivi
+        iduser_2:
+            columns:
+                - iduser
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        description:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        datedebut:
+            type: date
+            nullable: false
+            column: dateDebut
+        datefin:
+            type: date
+            nullable: false
+            column: dateFin
+        avancement:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+    manyToOne:
+        iduser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                iduser:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idsuivi:
+            targetEntity: Suivi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idsuivi:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,43 @@
+{% extends "fichepfeBundle:Default:layout.html.twig" %}
+
+
+{% block content %}
+    <div class="box grid_16 single_datatable">
+        <div id="dt1" class="no_margin">
+            <table class=" datatable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Sujet</th>
+                    <th>Fonctionnalites</th>
+                    <th>Technologies</th>
+                    <th>Etablissement</th>
+                    <th>Supprimer</th>
+                    <th>Modifier</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+
+
+                {% for m in fichepfe %}
+                    <tr class="gradeU">
+                        <td align="center">{{ m.id }}</td>
+                        <td align="center">{{ m.nom }}</td>
+                        <td align="center">{{ m.prenom }}</td>
+                        <td align="center">{{ m.sujet }}</td>
+                        <td align="center">{{ m.fonctionnalites }}</td>
+                        <td align="center">{{ m.technologies }}</td>
+                        <td align="center">{{ m.etablissement }}</td>
+                        <td><a href="{{ path('Archiver',{'id':m.id}) }}">Archiver</a></td>
+                        <td><a href="{{ path('update',{'id':m.id}) }}">Modifier</a></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table></div>
+    </div>
+{% endblock %}

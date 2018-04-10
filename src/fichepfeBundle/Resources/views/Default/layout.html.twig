@@ -1,0 +1,336 @@
+
+
+
+
+<html>
+<head>
+
+    {% block head %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1;">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link href="images/interface/iOS_icon.png" rel="apple-touch-icon">
+        <title> {% block title %} Espace Admin {% endblock %}</title>
+    {% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('styles/adminica/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/plugins/all/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/adminica/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400,700') }}">
+    <link rel="stylesheet" href="{{ asset('styles/themes/layout_switcher.php?default=layout_fixed.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/themes/nav_switcher.php?default=nav_top.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/themes/skin_switcher.php?default=switcher.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/themes/theme_switcher.php?default=theme_blue.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/themes/bg_switcher.php?default=bg_honeycomb.css') }}">
+
+        <script src="{{ asset('scripts/plugins-min.js') }}"></script>
+        <script src="{{ asset('scripts/adminica/adminica_all-min.js') }}"></script>
+
+    <link rel="stylesheet" href="styles/adminica/colours.css">
+
+
+    {% endblock %}
+    {% endblock %}
+</head>
+
+<body>
+
+
+
+
+<div id="pjax">
+    <div id="wrapper" data-adminica-nav-top="1" data-adminica-side-top="1">
+        <div id="topbar" class="clearfix">
+
+            <a href="dashboard_sorter.php" class="logo"><span>Gestion PFE</span></a>
+
+            <div class="user_box dark_box clearfix">
+                <img src="{{ asset('images//interface/profile.jpg') }}" width="55" alt="Profile Pic" />
+                <h2>Administrator</h2>
+                <h3><a class="text_shadow" href="#">Torkhani Talel</a></h3>
+                <ul>
+                    <li><a href="#">profile</a><span class="divider">|</span></li>
+                    <li><a href="#">settings</a><span class="divider">|</span></li>
+                    <li><a href="login_slide.php" class="dialog_button" data-dialog="dialog_logout">Logout</a></li>
+                </ul>
+            </div><!-- #user_box -->
+        </div><!-- #topbar -->			<div id="sidebar" class="sidebar pjax_links">
+            <div class="cog">+</div>
+
+            <a href="index.php" class="logo"><span>Gestion PFE</span></a>
+
+            <div class="user_box dark_box clearfix">
+                <img src="{{ asset('images//interface/profile.jpg') }}" width="55" alt="Profile Pic" />
+                <h2>Administrator</h2>
+                <h3><a href="#">John Smith</a></h3>
+                <ul>
+                    <li><a href="#">settings</a><span class="divider">|</span></li>
+                    <li><a href="login_slide.php" class="dialog_button" data-dialog="dialog_logout">Logout</a></li>
+                </ul>
+            </div><!-- #user_box -->
+
+            <ul class="side_accordion" id="nav_side"> <!-- add class 'open_multiple' to change to from accordion to toggles -->
+                <li><a href="#" class="dialog_button" data-dialog="dialog_welcome"><img src="{{ asset('images//icons/small/grey/speech_bubble.png') }}"/>Gestion PFE</a></li>
+                <li><a href="empty.php" class="pjax"><img src="{{ asset('images//icons/small/grey/document.png') }}"/>Empty</a></li>
+
+                <li><a href="#"><img src="{{ asset('images//icons/small/grey/mail.png') }}"/>Mailbox<div class="alert badge alert_red">5</div></a>
+                    <ul class="drawer">
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Sent Items</a></li>
+                        <li><a href="#">Drafts<div class="alert badge alert_grey">2</div></a></li>
+                        <li><a href="#">Trash<div class="alert badge alert_grey">3</div></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="{{ asset('images//icons/small/grey/documents.png') }}"/>Documents<div class="alert badge alert_black">2</div></a>
+                    <ul class="drawer">
+                        <li><a href="files.php" class="pjax">View All</a></li>
+                        <li><a href="files.php" class="pjax">Upload/Download<div class="alert badge alert_grey">2</div></a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="{{ asset('images//icons/small/grey/users.png') }}"/>Members</a>
+                    <ul class="drawer">
+                        <li><a href="contacts.php" class="pjax">Add New</a></li>
+                        <li><a href="contacts.php" class="pjax">Edit/Delete</a></li>
+                        <li><a href="contacts.php" class="pjax">Search Profiles</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://www.google.com"><img src="{{ asset('images//icons/small/grey/graph.png') }}"/>Statistics</a></li>
+                <li><a href="#"><img src="{{ asset('images//icons/small/grey/cog_2.png') }}"/>Settings</a>
+                    <ul class="drawer">
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">System</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div id="search_side" class="dark_box"><form><input class="" type="text" placeholder="Search ..."></form></div>
+
+            <ul id="side_links" class="side_links" style="margin-bottom:0;">
+                <li><a href="#">Documentation</a>
+                <li><a href="#">Support Forum</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Subscribe</a></li>
+            </ul>
+        </div><!-- #sidebar -->
+        <div id="stackbar" class="stackbar">	<div class="user_box dark_box clearfix">
+                <img src="{{ asset('images//interface/profile.jpg') }}" width="55" alt="Profile Pic" />
+                <h2>Administrator</h2>
+                <h3><a href="#">John Smith</a></h3>
+                <ul>
+                    <li><a href="#">settings</a><span class="divider">|</span></li>
+                    <li><a href="login_slide.php" class="dialog_button" data-dialog="dialog_logout">Logout</a></li>
+                </ul>
+            </div>
+            <ul class="">
+                <li>
+                    <a href="#"><img src="{{ asset('images//icons/large/grey/computer_imac.png') }}"/><span>Dashboard</span></a>
+                    <ul>
+                        <li><a href="index.php" class="pjax">Dashboard</a></li>
+                        <li><a href="layout.php" class="pjax">Layout</a></li>
+                        <li><a href="text.php" class="pjax">Typography</a></li>
+                        <li><a href="isolated_wizard.php" class="pjax">Isolated</a></li>
+                        <li><a href="logout_button.php" class="pjax">Logout</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="{{ asset('images//icons/large/grey/mail.png') }}"/><span>Widgets</span><div class="alert badge alert_green">1</div></a>
+                    <ul>
+                        <li><a href="#">Widgets</a></li>
+                        <li><a href="tabs.php" class="pjax">Tabs</a></li>
+                        <li><a href="accordions.php" class="pjax">Accordions</a></li>
+                        <li><a href="wizard.php" class="pjax">Wizard</a></li>
+                        <li><a href="code.php" class="pjax">Code View</a></li>
+                        <li><a href="editor.php" class="pjax">Text Editor</a></li>
+                        <li><a href="dialog.php" class="pjax">Dialogs</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="{{ asset('images//icons/large/grey/users.png') }}"/><span>Contacts</span><div class="alert badge alert_blue">2</div></a>
+                    <ul>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="contacts.php" class="pjax">Profiles</a></li>
+                        <li><a href="contacts.php" class="pjax">Manage</a></li>
+                        <li><a href="#" class="dialog_button" data-dialog="dialog_register">Add</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="{{ asset('images//icons/large/grey/graph.png') }}"/><span>Reports</span></a>
+                    <ul>
+                        <li><a href="#" class="pjax">Reports</a></li>
+                        <li><a href="charts.php" class="pjax">Graphs</a></li>
+                        <li><a href="graphs.php" class="pjax">Charts</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div><!-- Closing Div for Stack Nav, you can boxes under the stack before this -->
+
+        <div id="main_container" class="main_container container_16 clearfix">
+            <div id="nav_top" class="dropdown_menu clearfix round_top">
+                <ul class="clearfix">
+                    <li class="icon_only"><a href="index.php" class="pjax"><img src="{{ asset('images//icons/small/grey/laptop.png') }}"/><span class="display_none">Home</span></a></li>
+
+                    <li><a href="#"><img src="{{ asset('images//icons/small/grey/frames.png') }}"/><span>Gestion des projets</span></a>
+                        <ul class="open_multiple">
+                            <li><a href="layout.php" class="pjax"><span>Ajouter un projet</span></a></li>
+                            <li><a href="text.php" class="pjax"><span>Liste des projets</span></a></li>
+                            <li><a class="hide_mobile" href="#"><span>Layout Width</span></a>
+                                <ul class="drawer ">
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/layout_switcher.php?style=layout_fixed.css') }}"><span>Fixed</span></a></li>
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/layout_switcher.php?style=switcher.css') }}"><span>Fluid</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a class="hide_mobile" href="#"><span>Layout Position</span></a>
+                                <ul class="drawer">
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/nav_switcher.php?style=switcher.css') }}"><span>Side</span></a></li>
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/nav_switcher.php?style=nav_top.css') }}"><span>Top</span></a></li>
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/nav_switcher.php?style=nav_slideout.css') }}"><span>Slide</span></a></li>
+                                    <li><a class="hide_mobile" href="{{ asset('styles/themes/nav_switcher.php?style=nav_stacks.css') }}"><span>Stacks</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a class="hide_mobile" href="#"><span>Isolated Layout</span><div class="alert badge">&#9733</div></a>
+                                <ul class="drawer">
+                                    <li><a href="isolated_tabs.php" class="pjax"><span>Isolated Tabs</span></a></li>
+                                    <li><a href="isolated_wizard.php" class="pjax"><span>Isolated Wizard</span></a></li>
+                                    <li><a href="isolated_graphs.php" class="pjax"><span>Isolated Graphs</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><img src="{{ asset('images//icons/small/grey/coverflow.png') }}"/><span>Widgets</span></a>
+                        <ul>
+                            <li><a href="tabs.php" class="pjax"><span>Tab Boxes</span></a></li>
+                            <li><a href="accordions.php" class="pjax"><span>Accordions Boxes</span></a></li>
+                            <li><a href="wizard.php" class="pjax"><span>Step by Step Wizard</span><div class="alert badge">&#9733</div></a></li>
+                            <li><a href="code.php"><span>Code View</span></a></li>
+                            <li><a href="editor.php" class="pjax"><span>WYSIWYG Editor</span></a></li>
+                            <li><a href="dialog.php" class="pjax"><span>Dialog Windows</span><div class="alert badge">&#9733</div></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><img src="{{ asset('images//icons/small/grey/create_write.png') }}"/><span>Fiches PFE</span></a>
+                        <ul>
+                            <li><a href="{{ path('ajoutpfe') }}" class="pjax"><span>Ajouter une fiche</span><div class="alert badge">&#9733</div></a></li>
+                            <li><a href="{{ path('aff') }}" class="pjax"><span>Liste Des fiches</span><div class="alert badge">&#9733</div></a></li>
+                            <li><a href="{{ path('Archives') }}" class="pjax"><span>Archives</span><div class="alert badge">&#9733</div></a></li>
+
+
+                        </ul>
+                    </li>
+                    <li><a href="gallery.php" class="pjax"><img src="{{ asset('images//icons/small/grey/images.png') }}"/><span>Gallery</span></a></li>
+                    <li><a href="#"><img src="{{ asset('images//icons/small/grey/blocks_images.png') }}"/><span>Tables</span></a>
+                        <ul>
+                            <li><a href="tables.php" class="pjax"><span>DataTables</span></a></li>
+                            <li><a href="tables_static.php" class="pjax"><span>Regular Tables</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><img src="{{ asset('images//icons/small/grey/file_cabinet.png') }}"/><span>Org</span><div class="alert badge">&#9733</div></a>
+                        <ul>
+                            <li><a href="files.php" class="pjax"><img src="{{ asset('images//icons/small/grey/folder.png') }}"/><span>Files</span></a></li>
+                            <li><a href="contacts.php" class="pjax"><img src="{{ asset('images//icons/small/grey/users.png') }}"/><span>Contacts</span><div class="alert badge">&#9733</div></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="calendar.php" class="pjax"><img src="{{ asset('images//icons/small/grey/month_calendar.png') }}"/><span>Cal</span></a></li>
+                    <li><a href="charts.php" class="pjax"><img src="{{ asset('images//icons/small/grey/graph.png') }}"/><span>Charts</span></a>
+                        <ul class="dropdown_right">
+                            <li><a href="charts.php" class="pjax"><span>Large Charts</span></a></li>
+                            <li><a href="graphs.php" class="pjax"><span>Info Graphs</span></a><div class="alert badge">&#9733</div></li>
+                        </ul></li>
+                    <li class="icon_only"><a href="#"><img src="{{ asset('images//icons/small/grey/locked_2.png') }}"/><span class="display_none">Login</span><div class="alert badge">&#9733</div></a>
+                        <ul class="dropdown_right">
+                            <li><a href="login_button.php" class="pjax"><span>Regular Login</span></a></li>
+                            <li><a href="#" class="dialog_button" data-dialog="dialog_logout"><span>Slide Login</span><div class="alert badge">&#9733</div></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="mobile_nav">
+                    <div class="main"></div>
+                    <div class="side"></div>
+                </div>
+
+            </div><!-- #nav_top -->
+            {% block pagetitle %}
+
+                {% endblock %}
+
+
+
+                {% block content %}
+
+
+                {% endblock %}
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="loading_overlay">
+        <div class="loading_message round_bottom">
+            <img src="{{ asset('images//interface/loading.gif') }}" alt="loading" />
+        </div>
+    </div>
+
+    <div id="template_options" class="clearfix">
+        <h3><img src="{{ asset('images//interface/adminica.png') }}" alt="Adminica"></h3>
+        <div class="layout_size">
+            <label>Layout:</label>
+            <a href="{{ asset('styles/themes/layout_switcher.php?style=switcher.css') }}">Fluid</a><span>|</span>
+            <a href="{{ asset('styles/themes/layout_switcher.php?style=layout_fixed.css') }}">Fixed</a>
+        </div>
+        <div class="layout_position">
+            <label class="display_none">Header: </label>
+            <a href="{{ asset('styles/themes/nav_switcher.php?style=switcher.css') }}">Side</a><span>|</span>
+            <a href="{{ asset('styles/themes/nav_switcher.php?style=nav_stacks.css') }}">Stacks</a><span>|</span>
+            <a href="{{ asset('styles/themes/nav_switcher.php?style=nav_top.css') }}">Top</a><span>|</span>
+            <a href="{{ asset('styles/themes/nav_switcher.php?style=nav_slideout.css') }}">Slide</a>
+        </div>
+        <div class="layout_position">
+            <label>Theme: </label>
+            <a href="{{ asset('styles/themes/skin_switcher.php?style=multiple&skin_switcher.php=switcher.css&bg_switcher.php=switcher.css') }}">Dark</a><span>|</span>
+            <a href="{{ asset('styles/themes/skin_switcher.php?style=multiple&skin_switcher.php=skin_light.css&bg_switcher.php=switcher.css') }}">Light</a>
+        </div>
+        <div class="theme_colour">
+            <label class="display_none">Colour:</label>
+            <a class="black" href="{{ asset('styles/themes/theme_switcher.php?style=switcher.css') }}"><span>Black</span></a>
+            <a class="blue" href="{{ asset('styles/themes/theme_switcher.php?style=theme_blue.css') }}"><span>Blue</span></a>
+            <a class="navy" href="{{ asset('styles/themes/theme_switcher.php?style=theme_navy.css') }}"><span>Navy</span></a>
+            <a class="red" href="{{ asset('styles/themes/theme_switcher.php?style=theme_red.css') }}"><span>Red</span></a>
+            <a class="green" href="{{ asset('styles/themes/theme_switcher.php?style=theme_green.css') }}"><span>Green</span></a>
+            <a class="magenta" href="{{ asset('styles/themes/theme_switcher.php?style=theme_magenta.css') }}"><span>Magenta</span></a>
+            <a class="orange" href="{{ asset('styles/themes/theme_switcher.php?style=theme_brown.css') }}"><span>Brown</span></a>
+        </div>
+        <div class="theme_background" id="bg_dark">
+            <label>BGs:</label>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_wunder.css') }}">NEW</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=switcher.css') }}">Boxes</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_punched.css') }}">Punched</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_honeycomb.css') }}">Honeycomb</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_wood.css') }}">Wood</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_dark_wood.css') }}">Timber</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_noise.css') }}">Noise</a>
+        </div>
+        <div class="theme_background" id="bg_light">
+            <label>BGs:</label>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=switcher.css') }}">Silver</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_white_wood.css') }}">Wood</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_squares.css') }}">Squares</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_noise_zero.css') }}">Noise</a><span>|</span>
+            <a href="{{ asset('styles/themes/bg_switcher.php?style=bg_stripes.css') }}">Stripes</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+
+
+
+
+</html>

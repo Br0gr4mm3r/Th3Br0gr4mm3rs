@@ -1,0 +1,55 @@
+fichepfeBundle\Entity\Archives:
+    type: entity
+    table: archives
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        sujet:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        fonctionnalites:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        technologies:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        etat:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        etablissement:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

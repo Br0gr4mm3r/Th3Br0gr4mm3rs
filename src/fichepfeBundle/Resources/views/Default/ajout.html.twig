@@ -1,0 +1,66 @@
+{% extends "fichepfeBundle:Default:layout.html.twig" %}
+{% block content %}
+    <div class="box grid_16">
+        <div class="block">
+            <h2 class="section">Ajouter votre fiche</h2>
+            <form class="validate_form" id="form" name="form" method="POST">
+                {{ form_start(form) }}
+                <fieldset class="label_side top">
+                    <label for="required_field">Nom</label>
+                    <div>
+                        {{ form_widget(form.nom) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="label_side top">
+                    <label for="required_field">Prenom</label>
+                    <div>
+                        {{ form_widget(form.prenom) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="label_side top">
+                    <label for="required_field">Sujet</label>
+                    <div>
+                        {{ form_widget(form.sujet) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="label_side">
+                    <label for="required_textarea">Fonctionnalites</label>
+                    <div class="clearfix">
+                        {{ form_widget(form.fonctionnalites) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="label_side">
+                    <label for="required_textarea">Technologies</label>
+                    <div class="clearfix">
+                        {{ form_widget(form.technologies) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="label_side top">
+                    <label for="required_field">Etablissement</label>
+                    <div>
+                        {{ form_widget(form.etablissement) }}
+                        <div class="required_tag"></div>
+                    </div>
+                </fieldset>
+
+                {{ form_rest(form) }}
+
+                {{ form_end(form) }}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

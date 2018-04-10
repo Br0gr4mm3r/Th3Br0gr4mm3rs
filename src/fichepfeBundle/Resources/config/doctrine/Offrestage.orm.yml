@@ -1,0 +1,41 @@
+fichepfeBundle\Entity\Offrestage:
+    type: entity
+    table: offrestage
+    indexes:
+        idorganisme:
+            columns:
+                - idorganisme
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        sujet:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        nombrepost:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: nombrePost
+    manyToOne:
+        idorganisme:
+            targetEntity: Organismeacceuil
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idorganisme:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,46 @@
+fichepfeBundle\Entity\Suivi:
+    type: entity
+    table: suivi
+    indexes:
+        iduser:
+            columns:
+                - iduser
+        iduser_2:
+            columns:
+                - iduser
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datederniersuivi:
+            type: date
+            nullable: false
+            column: dateDernierSuivi
+        datesuivisuivant:
+            type: date
+            nullable: false
+            column: dateSuiviSuivant
+        appreciation:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    manyToOne:
+        iduser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                iduser:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,52 @@
+{% extends "fichepfeBundle:Default:layout.html.twig" %}
+
+
+{% block content %}
+    <div class="box grid_16 single_datatable">
+        <div id="dt1" class="no_margin">
+            <table class=" datatable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Sujet</th>
+                    <th>Fonctionnalites</th>
+                    <th>Technologies</th>
+                    <th>Etablissement</th>
+                    <th>Supprimer</th>
+                    <th>Modifier</th>
+                    <th>    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+
+
+                {% for m in Archives %}
+                    <tr class="gradeU">
+                        <td align="center">{{ m.id }}</td>
+                        <td align="center">{{ m.nom }}</td>
+                        <td align="center">{{ m.prenom }}</td>
+                        <td align="center">{{ m.sujet }}</td>
+                        <td align="center">{{ m.fonctionnalites }}</td>
+                        <td align="center">{{ m.technologies }}</td>
+                        <td align="center">{{ m.etablissement }}</td>
+                        <td><a href="{{ path('Desarchiver',{'id':m.id}) }}">Désarchiver</a></td>
+                        <td><a href="{{ path('update',{'id':m.id}) }}">Modifier</a></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table></div>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="flat_area grid_16">
+        <h2>Listes des fiches archivés
+            <small>- Gestion PFE.</small>
+        </h2>
+    </div>
+{% endblock %}

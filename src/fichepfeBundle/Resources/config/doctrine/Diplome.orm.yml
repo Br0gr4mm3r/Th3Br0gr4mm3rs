@@ -1,0 +1,70 @@
+fichepfeBundle\Entity\Diplome:
+    type: entity
+    table: diplome
+    indexes:
+        iduser:
+            columns:
+                - iduser
+        idsoutenance:
+            columns:
+                - idsoutenance
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nometudiant:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: nomEtudiant
+        prenometudiant:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: prenomEtudiant
+        datenaissance:
+            type: date
+            nullable: false
+            column: dateNaissance
+        mention:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        dateemission:
+            type: datetime
+            nullable: false
+            column: dateEmission
+    manyToOne:
+        iduser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                iduser:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idsoutenance:
+            targetEntity: Soutenance
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idsoutenance:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<h1>Recherche d'une fiche </h1>
+Rechercher: <input type="text" id="recherche">
+<h2> Liste des fiches </h2>
+<div class="tableau">
+    <table id="table" name="table" border="1">
+        <tr style="color: #F5871F"><td>id</td><td>lib</td><td>pays</td><td>Date de naissance</td></tr>
+        {% for pfes in fichepfe %}
+            <tr>
+                <td>{{  fichepfe.id }}</td>
+                <td>{{  fichepfe.nom }}</td>
+                <td>{{  fichepfe.prenom }}</td>
+                <td>{{  fichepfe.sujet }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<script src="{{ asset('jquery-3.2.1.min.js') }}"> </script>
+<script >
+    $(function () {
+        $("#recherche").keyup(function () {
+            $.ajax({
+                url : "{{ path('_recherche') }}",
+                data : { 'pfes' : $(this).val() }
+            }).done(function (response) {
+                var tableau = $(response).find("table");
+                $('.tableau').empty();
+                $('.tableau').append(tableau);
+            });
+        });
+    })
+</script>
+</body>
+</html>

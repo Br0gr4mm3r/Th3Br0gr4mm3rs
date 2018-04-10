@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="fichepfeBundle\Entity\Diplome" table="diplome">
+    <indexes>
+      <index name="iduser" columns="iduser"/>
+      <index name="idsoutenance" columns="idsoutenance"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nometudiant" type="string" column="nomEtudiant" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prenometudiant" type="string" column="prenomEtudiant" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="datenaissance" type="date" column="dateNaissance" nullable="false"/>
+    <field name="mention" type="string" column="mention" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dateemission" type="datetime" column="dateEmission" nullable="false"/>
+    <many-to-one field="idsoutenance" target-entity="Soutenance" fetch="LAZY">
+      <join-columns>
+        <join-column name="idsoutenance" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="iduser" target-entity="FosUser" fetch="LAZY">
+      <join-columns>
+        <join-column name="iduser" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
