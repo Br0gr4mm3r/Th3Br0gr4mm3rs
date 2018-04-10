@@ -5,8 +5,6 @@ namespace fichepfeBundle\Controller;
 use fichepfeBundle\Entity\Archives;
 use fichepfeBundle\Entity\Fichepfe;
 use fichepfeBundle\Form\FichepfeType;
-use http\Env\Response;
-use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +13,7 @@ class fichepfeController extends Controller
 {
 
 
-    public function AfficheAction (Request $request){
+    public function AfficheAction (){
 
         $em=$this->getDoctrine();
         $pfes=$em->getRepository(Fichepfe::class)->findAll();
@@ -29,9 +27,23 @@ class fichepfeController extends Controller
     }
 
 
+    public function maficheAction (){
+
+        $em=$this->getDoctrine();
+        $pfes=$em->getRepository(Fichepfe::class)->findby(array('id'=>'12'));
+
+        return $this->render('fichepfeBundle:front:mafiche.html.twig', array(
+            'fichepfe'=>$pfes,
+
+        ));
 
 
-    public function ArchivesAction (Request $request){
+    }
+
+
+
+
+    public function ArchivesAction (){
 
         $em=$this->getDoctrine();
         $pfes=$em->getRepository(Archives::class)->findAll();
@@ -88,7 +100,7 @@ class fichepfeController extends Controller
                     'm'  => $pfes
                 )
             ),
-            'C:\wamp64\www\Projet\GestionPfeVf\web\pdf\FicheDe '.$nom.' '.$prenom.'.pdf'
+            'pdf\Fiche De '.$nom.' '.$prenom.'.pdf'
         );
 
         return $this->redirectToRoute('aff');

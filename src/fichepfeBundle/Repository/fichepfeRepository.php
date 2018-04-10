@@ -18,4 +18,5 @@ class fichepfeRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter(':nom',"%$nom%");
         return $q->getQuery()->getResult();
     }
+
 }

@@ -34,3 +34,10 @@ recherche:
     path: /recherche/
     defaults: { _controller: fichepfeBundle:fichepfe:Recherche }
 
+
+mafiche:
+    path: /mafiche
+    defaults: { _controller: fichepfeBundle:fichepfe:mafiche }
+
+
+

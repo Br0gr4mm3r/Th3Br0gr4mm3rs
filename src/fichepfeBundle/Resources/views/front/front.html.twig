@@ -11,7 +11,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link href="images/interface/iOS_icon.png" rel="apple-touch-icon">
         <title> {% block title %} Espace Admin {% endblock %}</title>
     {% block stylesheet %}
     <link rel="stylesheet" href="{{ asset('styles/adminica/all.css') }}">
@@ -211,8 +210,7 @@
                     <li><a href="#"><img src="{{ asset('images//icons/small/grey/create_write.png') }}"/><span>Fiches PFE</span></a>
                         <ul>
                             <li><a href="{{ path('ajoutpfe') }}" class="pjax"><span>Ajouter une fiche</span><div class="alert badge">&#9733</div></a></li>
-                            <li><a href="{{ path('aff') }}" class="pjax"><span>Liste Des fiches</span><div class="alert badge">&#9733</div></a></li>
-                            <li><a href="{{ path('Archives') }}" class="pjax"><span>Archives</span><div class="alert badge">&#9733</div></a></li>
+                            <li><a href="{{ path('aff') }}" class="pjax"><span>Ma fiche</span><div class="alert badge">&#9733</div></a></li>
 
 
                         </ul>
